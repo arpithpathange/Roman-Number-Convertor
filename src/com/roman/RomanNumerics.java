@@ -17,6 +17,8 @@ public class RomanNumerics {
         myMap.put("X", "10");
         myMap.put("L", "50");
         myMap.put("C", "100");
+        myMap.put("D", "500");
+        myMap.put("M", "1000");
     }
 
 	public static int convert(String inputRomanNo){
@@ -24,7 +26,6 @@ public class RomanNumerics {
         strArray = inputRomanNo.split("");
         int sum = 0;
         int currentNO=0;
-        boolean skip = false;
         for(int i = strArray.length-1; i >=0 ;i--){
 
                 if(CheckIfMinusIsRequired(i)){
@@ -37,6 +38,7 @@ public class RomanNumerics {
 
                 sum = sum + currentNO;
         }
+        System.out.println("Sum "+sum);
         return sum;
 	}
 
@@ -45,11 +47,9 @@ public class RomanNumerics {
             return false;
         }
         if(Integer.parseInt(myMap.get(strArray[i])) > Integer.parseInt(myMap.get(strArray[i-1]))){
-            System.out.println("true");
             return true;
         }
         else {
-            System.out.println("false");
             return false;
         }
     }

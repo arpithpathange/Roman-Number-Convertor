@@ -34,8 +34,15 @@ public class testRomanNumerics {
 
 	@Test
 	public void testRomanToTestMinusDigit() {
-		int output = rom.convert("LXXVIII");
-		assertEquals(78,output);
+		int output = rom.convert("LXXXIX");
+		assertEquals(89,output);
+	}
+
+	@Test
+	public void testRomanToTesRandom() {
+		//int output = rom.convert("DCCCLXXXVIII");
+		int output = rom.convert("DCCCLXXXVIII");
+		assertEquals(888,output);
 	}
 
 }
